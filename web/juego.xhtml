@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pregunstas</title>
+    </h:head>
+    <h:body style="background-image: url('http://i0.wp.com/ae01.alicdn.com/kf/HTB1xI78aFzsK1Rjy1Xbq6xOaFXaU/50pcs-Internet-Java-font-b-Programming-b-font-Language-font-b-Sticker-b-font-for-DIY.jpg')">
+        <p:panel header="#{user.nombre} la pregunta es:" style="margin: 0 auto; width: 60%">
+            <h:form id="fjuego" rendered="#{not empty preguntar.preguntas}">
+                <p:growl />
+                <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                    <p:dataGrid value="#{preguntar.ramdon}" var="p">
+                        <h:outputLabel for="al3" value="Pregunta:  " /> 
+                        <br/>
+                        <h:outputText value="#{p.pregunta}"/> 
+                        <br/>
+                        <br/>                   
+                        <p:selectOneRadio value="#{preguntar.respuestajugador}" >
+                            <f:selectItems var="a" value="#{preguntar.ramdon}" itemLabel="#{a.alternativa1}" itemValue="#{a.alternativa1}" />
+                            <f:selectItems var="b" value="#{preguntar.ramdon}" itemLabel="#{b.alternativa2}" itemValue="#{b.alternativa2}" />
+                            <f:selectItems var="c" value="#{preguntar.ramdon}" itemLabel="#{c.alternativa3}" itemValue="#{c.alternativa3}" />
+                            <f:selectItems var="d" value="#{preguntar.ramdon}" itemLabel="#{d.alternativa4}" itemValue="#{d.alternativa4}" />
+                        </p:selectOneRadio>
+                    </p:dataGrid>
+                </h:panelGrid>
+                <br/>
+                <p:commandButton value="Vamos a Ver"
+                                 actionListener="#{preguntar.jugar()}"
+                             update="fjuego"
+                             icon="ui-icon-trash">
+
+                <p:confirm header="Alerta" message="¿Estas seguro?" icon="ui-icon-alert"/>
+            </p:commandButton>
+                <p:confirmDialog global="true">
+                <p:commandButton value="Si" styleClass="ui-confirmdialog-yes" type="button" icon="ui-icon-check"/>
+                <p:commandButton value="No" styleClass="ui-confirmdialog-no" type="button" icon="ui-icon-close"/>
+
+            </p:confirmDialog>
+            </h:form>
+        </p:panel>
+    </h:body>
+</html>
+

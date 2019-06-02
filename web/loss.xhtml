@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Perdiste</title>
+    </h:head>
+    <h:body style="background-image: url('https://blog.mpquadro.it/hubfs/angular-day-2018-copertina.jpg')">
+        <h:form rendered="#{not empty usuario}">
+
+            <p:growl/>
+            <p:panel  header="LO SIENTO #{user.nombre} ... PERDISTE!!" style="margin: 0 auto; width: 35%">
+                    <img src="https://cdn.memegenerator.es/imagenes/memes/full/1/23/1238080.jpg" style = " margin: 0 auto; width: 100%"></img>
+                    <br></br>
+                     <p:link outcome="menu" value="Volver a jugar"/>| |<p:link outcome="index" value="Salir"/>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

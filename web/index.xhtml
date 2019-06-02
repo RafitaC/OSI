@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Bienvenido</title>
+    </h:head>
+    <h:body style="font-size: 35px">
+        <h:form id="login" style="background-image: url('http://www.sena.edu.co/Style%20Library/alayout/images/logoSena.png')">
+            <p:growl/>
+            <p:panel header="Bienvenido al JUEGO OSI" style="width: 45%; margin: 0 auto">
+                
+                <h:panelGrid columns="2">
+                    <h:outputText value="Participante"/>
+                    <p:inputText value="#{user.nombre}" required="true"
+                                 style="width: 80%"/>
+                    
+                    
+                    <p:commandButton value="Entrar" 
+                                     actionListener="#{user.loguear()}"
+                                     update="login"
+                                     
+                                     style="width: 90%"/>
+                </h:panelGrid>
+              
+            </p:panel>
+            
+            
+            
+        </h:form>
+        
+    </h:body>
+    <div class="b0KoTc"> <span class="Q8LRLc">Rafael Ch. - Angela - Hernando P. Oscar M</span>  </div>
+        
+        <div class="EvHmz hRvfYe" id="fbar">
+            <div class="fbar"> 
+                <div class="b2hzT">
+                    <style>.b0KoTc{color:rgba(0,0,1,.60);padding-left:50px}.Q8LRLc{font-size:15px}.b0KoTc{margin-left:30px;text-align:left}.b2hzT{border-bottom:50px solid #e4e4e9}</style>
+                    </div>
+                    <div class="b0KoTc"> <span class="Q8LRLc">Derechos reservados:© Rafael Chica</span>  </div>
+        
+                
+            </div>
+        </div>
+    
+</html>
+
